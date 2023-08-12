@@ -52,7 +52,8 @@ describe('Deve renderizar um campo de input', () => {
 
     render(<Formulario realizarTransacao={realizarTransacao} />);
 
-    userEvent.selectOptions(screen.getByTestId('select-opcoes'), ['Depósito']);
+    userEvent.selectOptions(screen.getByRole('combobox'), ['Depósito']);
+    // userEvent.selectOptions(screen.getByTestId('select-opcoes'), ['Depósito']);
 
     expect(screen.getByRole('option', { name: 'Depósito' }).selected).toBe(
       true,
